@@ -1,0 +1,24 @@
+A = ((1, 2, 3), (4, 5, 6))
+B = ((-1, 0), (0, 1), (1, 1))
+
+def producto_matrices(matriz1, matriz2):
+   
+    filas_matriz1 = len(matriz1)
+    columnas_matriz1 = len(matriz1[0])
+    filas_matriz2 = len(matriz2)
+    columnas_matriz2 = len(matriz2[0])
+    
+     if columnas_matriz1 != filas_matriz2:
+        print("No se pueden multiplicar las matrices")
+        return None
+
+    resultado = [[0 for j in range(columnas_matriz2)] for i in range(filas_matriz1)]
+    
+    for i in range(filas_matriz1):
+        for j in range(columnas_matriz2):
+            for k in range(filas_matriz2):
+                resultado[i][j] += matriz1[i][k] * matriz2[k][j]
+
+    return resultado
+resultado = producto_matrices(A, B)
+print(resultado)
