@@ -13,3 +13,15 @@ print("View: ", yt.views)
 yd = yt.streams.get_highest_resolution()
 #folder
 yd.download("your.folder.rh")
+
+
+#shell script
+first: nano yt.sh
+It opens a new console where you're going to put this
+#!/bin/zsh
+cd (dir of your folder)
+python3 ytDownloader.py $1 
+then proceeds:
+zsh yt.sh "yourvideolinkhere"
+READY
+#
