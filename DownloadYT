@@ -1,0 +1,15 @@
+from pytube import YouTube
+from sys import argv
+
+link = argv[1]
+yt = YouTube(link)
+
+print("Title": yt.title)
+
+print("View: ", yt.views) 
+
+#To corroborate if the code works in cmd: python3 ytDownloader.py "https://www.you..."
+#To download the video:
+yd = yt.streams.get_highest_resolution()
+#folder
+yd.download("your.folder.rh")
